@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1092327706393",
+    "firebase_url": "https://sahyog-c0806.firebaseio.com",
+    "project_id": "sahyog-c0806",
+    "storage_bucket": "sahyog-c0806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092327706393:android:2063faed2e6e6942",
+        "android_client_info": {
+          "package_name": "com.iitd.sahyog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092327706393-0782dntneavctcr7svelfjkqdi33g7ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm9QMehyK6oEgy0MQBMwcaYMrmYZ5oVrA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
