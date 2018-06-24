@@ -8,12 +8,14 @@
     tools:context=".MainActivitySignIn"
     tools:showIn="@layout/activity_main_sign_in">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/login_background"
     android:background="#D5DBDB"
-    android:id="@+id/login_background">
+    android:gravity="center"
+    android:orientation="vertical">
     
     
     <TextView
@@ -21,8 +23,6 @@
     android:layout_width="210dp"
     android:layout_height="103dp"
     android:text="Sahyog"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="50dp"
     android:textColor="@android:color/black"
     android:textSize="60sp" />
     
@@ -32,8 +32,6 @@
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="Kerberos ID"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@+id/title"
     android:inputType="textPersonName"
     android:selectAllOnFocus="false"
     android:singleLine="false" />
@@ -44,18 +42,12 @@
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="Password"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@+id/userID"
     android:inputType="textPassword" />
     
-    <Button
+    <TextView
     android:id="@+id/forgotBtn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#D5DBDB"
-    android:textAllCaps="false"
-    android:layout_marginLeft="200dp"
-    android:layout_below="@+id/password"
     android:text="Forgot Password?" />
     
     <Button
@@ -64,11 +56,15 @@
     android:layout_height="wrap_content"
     android:layout_margin="50dp"
     android:background="@drawable/login"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@+id/forgotBtn"
     android:text="LOGIN"
     android:textColor="@android:color/white" />
     
-</RelativeLayout>
+    <TextView
+    android:id="@+id/newUser"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="New User? Register Here" />
+    
+</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
