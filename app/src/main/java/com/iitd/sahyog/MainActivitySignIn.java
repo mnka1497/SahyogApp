@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.iitd.sahyog.MainActivityFeed;
+import com.iitd.sahyog.R;
 
 import static android.widget.Toast.LENGTH_LONG;
 
@@ -36,6 +40,8 @@ public class MainActivitySignIn extends AppCompatActivity implements View.OnClic
     protected ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     private TextView title;
+    private LinearLayout background;
+    private TextView newUser;
 
 
     @Override
@@ -43,24 +49,32 @@ public class MainActivitySignIn extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_sign_in);
 
-        title = (TextView) findViewById(R.id.textView);
-        signInButton = (Button) findViewById(R.id.button2);
-        editTextEmail = (EditText) findViewById(R.id.editText);
-        editTextPassword = (EditText) findViewById(R.id.editText4);
-        textViewForgot = (TextView) findViewById(R.id.textView2);
+        title = (TextView) findViewById(R.id.title);
+        newUser = (TextView) findViewById(R.id.newUser);
+        background = (LinearLayout) findViewById(R.id.login_background);
+        signInButton = (Button) findViewById(R.id.loginBtn);
+        editTextEmail = (EditText) findViewById(R.id.userID);
+        editTextPassword = (EditText) findViewById(R.id.password);
+        textViewForgot = (TextView) findViewById(R.id.forgotBtn);
         progressDialog = new ProgressDialog(this);
-
         textViewForgot.setOnClickListener(this);
         signInButton.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser()!=null){
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        if(user!=null){
+            if(user.isEmailVerified()){
             finish();
             startActivity(new Intent(getApplicationContext(), MainActivityFeed.class));
+            }else{
+                promter("Please verify email");
+                return;
+            }
         }
-        //RelativeLayout background = (RelativeLayout) findViewById(R.background);
-        //background.setOnClickListener(this);
 
+        background.setOnClickListener(this);
+        newUser.setOnClickListener(this);
         editTextPassword.setOnKeyListener((View.OnKeyListener) this);
         title.setOnClickListener(this);
 
@@ -74,60 +88,79 @@ public class MainActivitySignIn extends AppCompatActivity implements View.OnClic
         if (v == textViewForgot) {
             ForotPassword();
         }
-        //if(v.getId()== R.id.background){
-        //InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        //inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+        if(v == background){
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
 
-   // }
+   }
         if(v==title){
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
         }
+
+        if(v==newUser){
+            finish();
+            createNew();
+        }
     }
 
-    public void signinUser(){
+    public void createNew(){
+        Intent i = new Intent(MainActivitySignIn.this, RegisterUser.class);
+        startActivity(i);
+    }
+    public void signinUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        if(TextUtils.isEmpty(email)){
-
+        if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please enter Email", LENGTH_LONG).show();
             return;
         }
-        if(TextUtils.isEmpty(password)){
+        if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Please enter Password", LENGTH_LONG).show();
         }
         //All valid. Show Progress Dialog Sign in Success
 
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         progressDialog.setMessage("Signing you in... ");
         progressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(email,password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
-                        if(task.isSuccessful()){
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivityFeed.class));
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            boolean st = user.isEmailVerified();
+                            if (st) {
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), MainActivityFeed.class));
+                            } else
+                                promter("Please verify email");
+                                return;
+                        } else {
+                            promter("Invalid username or password");
+                            return;
                         }
-                        else
-                            promter();
+
+
                     }
                 });
-
     }
     public void ForotPassword(){
 
         return;
     }
 
-    public  void promter(){
-        Toast toast = Toast.makeText(this, "Invalid username or password", Toast.LENGTH_LONG);
+    public  void promter(String s){
+        Toast toast = Toast.makeText(this, s, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
-        return;
+
     }
+
+
+
 
     @Override
     public boolean onKey(View view, int i, KeyEvent keyEvent) {

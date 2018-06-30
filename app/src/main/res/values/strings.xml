@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main_feed">MainActivityFeed</string>
     <string name="title_activity_main_registration">MainActivityRegistration</string>
+    <string name="title_activity_main_splash">MainActivitySplash</string>
+    <string name="title_activity_register_user">RegisterUser</string>
+    <string name="title_activity_registration">Registration</string>
 </resources>
