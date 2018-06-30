@@ -8,6 +8,7 @@
     tools:context=".MainActivitySignIn"
     tools:showIn="@layout/activity_main_sign_in">
 
+<<<<<<< HEAD
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -66,5 +67,65 @@
             android:text="New User? Register Here" />
 
     </LinearLayout>
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/login_background"
+    android:background="#D5DBDB"
+    android:gravity="center"
+    android:orientation="vertical">
+    
+    
+    <TextView
+    android:id="@+id/title"
+    android:layout_width="210dp"
+    android:layout_height="103dp"
+    android:text="Sahyog"
+    android:textColor="@android:color/black"
+    android:textSize="60sp" />
+    
+    <EditText
+    android:id="@+id/userID"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Kerberos ID"
+    android:inputType="textPersonName"
+    android:selectAllOnFocus="false"
+    android:singleLine="false" />
+    
+    <EditText
+    android:id="@+id/password"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Password"
+    android:inputType="textPassword" />
+    
+    <TextView
+    android:id="@+id/forgotBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Forgot Password?" />
+    
+    <Button
+    android:id="@+id/loginBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="50dp"
+    android:background="@drawable/login"
+    android:text="LOGIN"
+    android:textColor="@android:color/white" />
+    
+    <TextView
+    android:id="@+id/newUser"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="New User? Register Here" />
+    
+</LinearLayout>
+>>>>>>> origin/master
 
 </android.support.constraint.ConstraintLayout>
