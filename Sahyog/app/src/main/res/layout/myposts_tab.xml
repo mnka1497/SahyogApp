@@ -1,0 +1,103 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sahyog.profile_activity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D0D3D4"
+        android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/AppTheme.AppBarOverlay1">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Amphibious Autonomous Drone" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/req"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Looking for" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingLeft="10dp"
+                android:text="@string/app_content" />
+
+            <TextView
+                android:id="@+id/plus"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignEnd="@+id/description_text"
+                android:layout_alignRight="@+id/description_text"
+                android:layout_below="@+id/description_text"
+                android:clickable="true"
+                android:text="Read More" />
+
+
+            <TextView
+                android:id="@+id/minus"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignEnd="@+id/description_text"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignRight="@+id/description_text"
+                android:layout_below="@+id/description_text"
+                android:clickable="true"
+                android:text="Read Less"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Viewed By: " />
+
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

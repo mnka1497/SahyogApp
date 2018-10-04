@@ -1,0 +1,197 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sahyog.notifications_activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/textColorPrimary"
+                android:text="View Categories >>"
+                android:textColor="#A52A2A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="350dp"
+                        android:background="@drawable/dots" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Amphibious Autonomous Drone"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Date"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/req"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Looking for"
+                        android:textColor="#000000" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/description_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="5"
+                            android:paddingLeft="10dp"
+                            android:text="@string/app_content"
+                            android:textColor="#000000" />
+
+
+                        <TextView
+                            android:id="@+id/plus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignEnd="@+id/description_text"
+                            android:layout_alignRight="@+id/description_text"
+                            android:layout_below="@+id/description_text"
+                            android:clickable="true"
+                            android:text="Read More" />
+
+
+                        <TextView
+                            android:id="@+id/minus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignEnd="@+id/description_text"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignRight="@+id/description_text"
+                            android:layout_below="@+id/description_text"
+                            android:clickable="true"
+                            android:text="Read Less"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:paddingLeft="10dp"
+                        android:text="Posted By"
+                        android:textColor="#000000" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/circle"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/circle"
+                            android:paddingTop="20dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:text="Name"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/dept"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:text="Department"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="#000000" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/button1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@drawable/chat" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="200dp"
+                            android:layout_toEndOf="@id/button1"
+                            android:layout_toRightOf="@id/button1"
+                            android:background="@drawable/add_friend" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@android:color/darker_gray" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

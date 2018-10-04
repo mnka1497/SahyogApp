@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sahyog.activity_about">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/no_award"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/circle"
+            android:paddingTop="20dp"
+            android:alpha="0.6"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="20dp"
+            android:text="Award &amp; Honour"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/no_publication"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@+id/no_award"
+            android:background="@drawable/circle"
+            android:paddingTop="20dp"
+            android:alpha="0.6"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="220dp"
+            android:text="Publications"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/no_skill"
+            android:layout_below="@+id/no_award"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="40dp"
+            android:background="@drawable/circle"
+            android:paddingTop="20dp"
+            android:alpha="0.6"/>
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="20dp"
+            android:text="Skills"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/no_patent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/no_skill"
+            android:layout_below="@+id/no_publication"
+            android:background="@drawable/circle"
+            android:paddingTop="20dp"
+            android:alpha="0.6"/>
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="220dp"
+            android:text="Publications"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text4"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/contact_card"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img1"
+                android:text="Identity number"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gender"
+                android:layout_marginRight="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img2"
+                android:text="Gender"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/calendar"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img3"
+                android:text="Age"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/address"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img4"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/img5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/phone"
+                android:layout_marginRight="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img5"
+                android:text="Contact"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/img6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/collaboration"
+                android:layout_marginRight="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img6"
+                android:text="Available for Collaboration"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

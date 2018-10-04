@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/dp_androidnew"
+        android:id="@+id/SingleUserImage" />
+
+        <ImageView
+            android:id="@+id/UserOffline"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/SingleUserImage"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/grey_dot"
+            android:visibility="visible" />
+        <ImageView
+            android:id="@+id/UserOnline"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/SingleUserImage"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/green_dot"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/SingleUserName"
+            android:layout_width="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/SingleUserImage"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_toEndOf="@id/SingleUserImage"
+            android:layout_toRightOf="@id/SingleUserImage"
+            android:text="Display Name" />
+
+        <TextView
+            android:id="@+id/SingleDept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignStart="@+id/SingleUserName"
+            android:layout_alignLeft="@+id/SingleUserName"
+            android:layout_below="@+id/SingleUserName"
+            android:text="Department" />
+
+        <ImageView
+            android:id="@+id/Unread_Msg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="35dp"
+            android:layout_toEndOf="@+id/SingleUserName"
+            android:layout_toRightOf="@+id/SingleUserName"
+            android:src="@drawable/unread"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="100dp"
+            android:background="@android:color/darker_gray" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
